@@ -1,4 +1,4 @@
-package entity
+package tweet
 
 type Tweet struct {
 	ID      string `json:"id"`
