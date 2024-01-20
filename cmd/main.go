@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/Edgarmontenegro123/X-Twitter/internal/db"
+	"github.com/Edgarmontenegro123/X-Twitter/internal/tweet"
 	"github.com/Edgarmontenegro123/X-Twitter/internal/user"
 )
 
@@ -10,12 +11,27 @@ func main() {
 	// Crear una instancia de la db en memoria
 	database := db.NewDatabase()
 
-	// Crear una instancia del servicio de usuarios
+	// Crear una instancia del servicio de usuarios y tweets
 	userService := user.NewUserService(database)
+	tweetService := tweet.NewTweetService(database)
 
 	// Crear y guardar un usuario en la db
 	user1 := user.User{ID: 1, Username: "usuario1"}
 	database.SaveUser(user1)
+
+	// Publicar tweet para usuario1
+	err := tweetService.PublishTweet(user1.ID, "Mi primer tweet!")
+	if err != nil {
+		fmt.Println("Error al publicar tweet", err)
+	}
+
+	// Obtener tweets del usuario1
+	tweets, err := tweetService.GetTweets(user1.ID)
+	if err != nil {
+		fmt.Println("Error al obtener tweets", err)
+	} else {
+		fmt.Printf("Tweets de %s: %v\n\n", user1.Username, tweets)
+	}
 
 	// Crear y guardar otro usuario
 	user2 := user.User{ID: 2, Username: "usuario2"}
@@ -28,7 +44,7 @@ func main() {
 	}
 
 	// usuario1 sigue a usuario2
-	err := userService.Follow(user1.ID, user2.ID)
+	err = userService.Follow(user1.ID, user2.ID)
 	if err != nil {
 		fmt.Println("Error al seguir a un usuario", err)
 	}
