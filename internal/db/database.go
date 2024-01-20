@@ -19,3 +19,7 @@ func (db *Database) SaveUser(user user.User) {
 func (db *Database) GetUserByID(userID int) user.User {
 	return db.users[userID]
 }
+
+func (db *Database) GetUsers() map[int]user.User {
+	return db.users
+}
