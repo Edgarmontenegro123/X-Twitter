@@ -1,8 +1,9 @@
 package user
 
 type User struct {
-	ID       int
-	Username string
+	ID        int
+	Username  string
+	Followers []int
 }
 
 /*type User struct {

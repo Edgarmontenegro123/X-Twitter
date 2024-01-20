@@ -2,14 +2,15 @@ package user
 
 import (
 	"errors"
+	"github.com/Edgarmontenegro123/X-Twitter/internal/db"
 )
 
 type UserService struct {
 	users map[int]User
-	db    *Database
+	db    *db.Database
 }
 
-func NewUserService(db *Database) *UserService {
+func NewUserService(db *db.Database) *UserService {
 	return &UserService{
 		users: make(map[int]User),
 		db:    db,
@@ -22,10 +23,10 @@ func (us *UserService) Follow(userID, followerID int) error {
 		return errors.New("el usuario a seguir no existe")
 	}
 
-	follower, ok := us.users[followerID]
+	/*follower, ok := us.users[followerID]
 	if !ok {
 		return errors.New("El seguidor no existe")
-	}
+	}*/
 
 	// Verificar si el seguidor ya está siguiendo al usuario
 	for _, existingFollower := range userToFollow.Followers {
