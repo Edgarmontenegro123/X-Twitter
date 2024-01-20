@@ -10,6 +10,7 @@ type UserService struct {
 	db    *db.Database
 }
 
+// NewUserService Función no utilizada por el momento
 func NewUserService(db *db.Database) *UserService {
 	return &UserService{
 		users: make(map[int]User),
