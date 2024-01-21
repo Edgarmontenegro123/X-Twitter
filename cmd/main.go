@@ -43,8 +43,18 @@ func main() {
 		fmt.Printf("%+v\n", u)
 	}
 
-	// usuario1 sigue a usuario2
+	// usuario2 sigue a usuario1
 	err = userService.Follow(user1.ID, user2.ID)
+	if err != nil {
+		fmt.Println("Error al seguir a un usuario", err)
+	}
+
+	// Creo un tercer usuario
+	user3 := user.User{ID: 3, Username: "usuario3"}
+	database.SaveUser(user3)
+
+	// usuario3 sigue a usuario1
+	err = userService.Follow(user1.ID, user3.ID)
 	if err != nil {
 		fmt.Println("Error al seguir a un usuario", err)
 	}
