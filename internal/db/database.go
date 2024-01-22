@@ -36,8 +36,6 @@ func (db *Database) SaveTweet(tweet tweet.Tweet) {
 }
 
 func (db *Database) GetTweetsByUserID(userID int) []tweet.Tweet {
-	//return db.Tweets[userID]
-
 	client, ok := db.Users[userID]
 	if !ok {
 		return nil

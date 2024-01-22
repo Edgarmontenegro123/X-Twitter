@@ -47,10 +47,6 @@ func (us *UserService) Follow(userID, followerID int) error {
 	us.db.SaveUser(userToFollow)
 
 	// También actualizar la lista de seguidos en el seguidor
-	/*follower := us.db.GetUserByID(followerID)
-	if follower.ID == 0 {
-		return errors.New("el seguidor no existe")
-	}*/
 	follower.Following = append(follower.Following, userID)
 	us.db.SaveUser(follower)
 
