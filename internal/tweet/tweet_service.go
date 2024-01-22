@@ -28,6 +28,11 @@ func (ts *TweetService) PublishTweet(userID int, content string) error {
 		return errors.New("el usuario no existe")
 	}
 
+	// Validar que el tweet no exceda el límite de caracteres
+	if len(content) > MaxTweetLength {
+		return fmt.Errorf("el tweet excede el límite de %d caracteres", MaxTweetLength)
+	}
+
 	// Crear un nuevo tweet
 	newTweet := Tweet{
 		ID:      len(ts.db.GetTweetsByUserID(userID)) + 1,
