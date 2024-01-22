@@ -4,7 +4,7 @@ type User struct {
 	ID        int
 	Username  string
 	Followers []int
-	// Tweets    []tweet.Tweet
+	Following []int
 }
 
 /*type User struct {

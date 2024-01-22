@@ -27,6 +27,12 @@ func (us *UserService) Follow(userID, followerID int) error {
 		return errors.New("el usuario a seguir no existe")
 	}
 
+	// Comprobar existencia del seguidor
+	follower := us.db.GetUserByID(followerID)
+	if follower.ID == 0 {
+		return errors.New("el seguidor no existe")
+	}
+
 	// Verificar si el seguidor ya está siguiendo al usuario
 	for _, existingFollower := range userToFollow.Followers {
 		if existingFollower == followerID {
@@ -41,10 +47,12 @@ func (us *UserService) Follow(userID, followerID int) error {
 	us.db.SaveUser(userToFollow)
 
 	// También actualizar la lista de seguidos en el seguidor
-	follower := us.db.GetUserByID(followerID)
+	/*follower := us.db.GetUserByID(followerID)
 	if follower.ID == 0 {
 		return errors.New("el seguidor no existe")
-	}
+	}*/
+	follower.Following = append(follower.Following, userID)
+	us.db.SaveUser(follower)
 
 	return nil
 }

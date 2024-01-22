@@ -51,6 +51,12 @@ func main() {
 		fmt.Println("Error al publicar tweet", err)
 	}
 
+	// Usuario4
+	err = tweetService.PublishTweet(user4.ID, "Tweet de usuario4 Mi propio tweet!")
+	if err != nil {
+		fmt.Println("Error al publicar tweet", err)
+	}
+
 	// Obtener tweets del usuario1
 	tweets, err := tweetService.GetTweets(user1.ID)
 	if err != nil {
@@ -69,13 +75,18 @@ func main() {
 	if err != nil {
 		fmt.Println("Error al seguir a un usuario", err)
 	}
-	// usuario4 sigue a usuario2
+	// usuario2 sigue a usuario4
 	err = userService.Follow(user4.ID, user2.ID)
 	if err != nil {
 		fmt.Println("Error al seguir a un usuario", err)
 	}
 	// usuario3 sigue a usuario4
 	err = userService.Follow(user4.ID, user3.ID)
+	if err != nil {
+		fmt.Println("Error al seguir a un usuario", err)
+	}
+	// usuario4 sigue a usuario2
+	err = userService.Follow(user2.ID, user4.ID)
 	if err != nil {
 		fmt.Println("Error al seguir a un usuario", err)
 	}
@@ -106,4 +117,12 @@ func main() {
 	}
 
 	tweetService.PrintUserTimeline(4)
+
+	// Obtener lista de seguidores de user1
+	followers, err = userService.GetFollowers(user2.ID)
+	if err != nil {
+		fmt.Println("Error al obtener la lista de seguidores", err)
+	} else {
+		fmt.Printf("***** Seguidores de %s: %v\n\n", user2.Username, followers)
+	}
 }
