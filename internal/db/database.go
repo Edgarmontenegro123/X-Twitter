@@ -1,13 +1,15 @@
 package db
 
 import (
+	"errors"
 	"github.com/Edgarmontenegro123/X-Twitter/internal/tweet"
 	"github.com/Edgarmontenegro123/X-Twitter/internal/user"
 )
 
 type Database struct {
-	Users  map[int]user.User
-	Tweets map[int][]tweet.Tweet
+	Users     map[int]user.User
+	Tweets    map[int][]tweet.Tweet
+	followers map[int][]int
 }
 
 func NewDatabase() *Database {
@@ -34,5 +36,30 @@ func (db *Database) SaveTweet(tweet tweet.Tweet) {
 }
 
 func (db *Database) GetTweetsByUserID(userID int) []tweet.Tweet {
-	return db.Tweets[userID]
+	//return db.Tweets[userID]
+
+	client, ok := db.Users[userID]
+	if !ok {
+		return nil
+	}
+
+	userTweets := db.Tweets[client.ID]
+	return userTweets
+}
+
+func (db *Database) GetFollowers(userID int) ([]user.User, error) {
+	// Cambio user por client para evitar conflictos con la importación del package
+	client := db.GetUserByID(userID)
+	if client.ID == 0 {
+		return nil, errors.New("el usuario no existe")
+	}
+
+	followers := []user.User{}
+	for _, followerID := range client.Followers {
+		follower := db.GetUserByID(followerID)
+		if follower.ID != 0 {
+			followers = append(followers, follower)
+		}
+	}
+	return followers, nil
 }
