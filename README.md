@@ -157,7 +157,3 @@ Estas estrategias aseguran que X-Twitter pueda manejar un alto número de usuari
   - **Almacenamiento de Datos Denormalizado:** Exploración de enfoques de almacenamiento denormalizado para reducir la complejidad en las consultas de lectura.
 
 Estas mejoras deben abordarse en fases posteriores del desarrollo para garantizar un rendimiento óptimo y escalabilidad a medida que la plataforma crece en usuarios y actividades.
-
-
-
-
