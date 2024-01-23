@@ -7,6 +7,7 @@ import (
 
 func SetupRoutes(router *gin.Engine, tweetController *controllers.TweetController, userController *controllers.UserController) {
 	// Configurar rutas
+	router.POST("/create_user", userController.CreateUserController)
 	router.POST("/publish_tweet", tweetController.PublishTweetController)
 	router.GET("/get_tweets/:user_id", tweetController.GetTweetsController)
 	router.POST("/follow_user", userController.FollowUserController)

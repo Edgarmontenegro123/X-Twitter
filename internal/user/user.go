@@ -6,8 +6,3 @@ type User struct {
 	Followers []int
 	Following []int
 }
-
-/*type User struct {
-	ID       string `json:"id"`
-	Username string `json:"username"`
-}*/

@@ -108,3 +108,8 @@ func (ts *TweetService) PrintUserTimeline(userID int) {
 
 	fmt.Printf("Timeline de usuario%d: %+v\n", userID, timelineTweets)
 }
+
+func (ts *TweetService) UserExists(userID int) bool {
+	exists := ts.db.GetUserByID(userID)
+	return exists.ID != 0
+}

@@ -21,6 +21,10 @@ func NewUserService(db UserDB) *UserService {
 	}
 }
 
+func (us *UserService) SaveUser(user User) {
+	us.db.SaveUser(user)
+}
+
 func (us *UserService) Follow(userID, followerID int) error {
 	userToFollow := us.db.GetUserByID(userID)
 	if userToFollow.ID == 0 {

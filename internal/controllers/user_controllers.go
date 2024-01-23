@@ -17,9 +17,38 @@ type FollowRequest struct {
 	FollowerID int `json:"follower_id" binding:"required"`
 }
 
+type CreateUserRequest struct {
+	ID       int    `json:"user_id" binding:"required"`
+	Username string `json:"username" binding:"required"`
+}
+
 // NewUserController crea una nueva instancia de UserController
 func NewUserController(userService *user.UserService) *UserController {
 	return &UserController{UserService: userService}
+}
+
+// CreateUserController maneja la creación de usuarios
+func (uc *UserController) CreateUserController(c *gin.Context) {
+	var createUserRequest CreateUserRequest
+
+	if err := c.ShouldBindJSON(&createUserRequest); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Datos de solicitud no válidos"})
+		return
+	}
+	// Verificar si se proporciona un ID en la solicitud
+	if createUserRequest.ID == 0 {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Se requiere un ID diferente de 0 para crear el usuario"})
+		return
+	}
+
+	// Crear una nueva instancia de usuario
+	newUser := user.User{
+		ID: createUserRequest.ID,
+	}
+
+	// Guardar el nuevo usuario en la base de datos
+	uc.UserService.SaveUser(newUser)
+	c.JSON(http.StatusCreated, gin.H{"message": "Usuario creado exitosamente"})
 }
 
 // FollowUserController maneja la solicitud de seguir a un usuario
