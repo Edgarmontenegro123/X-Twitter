@@ -1,0 +1,10 @@
+{
+  "routes": [
+    { "src": "/create_user", "dest": "/server/api" },
+    { "src": "/publish_tweet", "dest": "/server/api" },
+    { "src": "/get_tweets/:user_id", "dest": "/server/api" },
+    { "src": "/follow_user", "dest": "/server/api" },
+    { "src": "/get_followers/:user_id", "dest": "/server/api" },
+    { "src": "/.*", "dest": "/server/index.html" }
+  ]
+}
