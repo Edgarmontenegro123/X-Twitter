@@ -1,10 +1,10 @@
 {
   "routes": [
-    { "src": "/create_user", "dest": "/server/api" },
-    { "src": "/publish_tweet", "dest": "/server/api" },
-    { "src": "/get_tweets/:user_id", "dest": "/server/api" },
-    { "src": "/follow_user", "dest": "/server/api" },
-    { "src": "/get_followers/:user_id", "dest": "/server/api" },
-    { "src": "/.*", "dest": "/server/index.html" }
+    { "src": "/create_user", "dest": "/create_user" },
+    { "src": "/publish_tweet", "dest": "/publish_tweet" },
+    { "src": "/get_tweets/:user_id", "dest": "/get_tweets/:user_id" },
+    { "src": "/follow_user", "dest": "/follow_user" },
+    { "src": "/get_followers/:user_id", "dest": "/get_followers/:user_id" },
+    { "src": "/.*", "dest": "/.*" }
   ]
 }
