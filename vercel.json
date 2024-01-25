@@ -1,9 +1,9 @@
 {
   "routes": [
-    { "src": "/create_user", "dest": "/create_user" },
-    { "src": "/publish_tweet", "dest": "/publish_tweet" },
+    { "src": "/create_user", "methods": ["POST"], "dest": "/create_user" },
+    { "src": "/publish_tweet", "methods": ["POST"], "dest": "/publish_tweet" },
     { "src": "/get_tweets/:user_id", "dest": "/get_tweets/:user_id" },
-    { "src": "/follow_user", "dest": "/follow_user" },
+    { "src": "/follow_user", "methods": ["POST"], "dest": "/follow_user" },
     { "src": "/get_followers/:user_id", "dest": "/get_followers/:user_id" },
     { "src": "/.*", "dest": "/.*" }
   ]
