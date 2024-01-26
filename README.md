@@ -131,29 +131,17 @@ Asegúrate de tener instalado Go en tu sistema. Puedes descargarlo [aquí](https
 
 ### Pasos
 1. Clona este repositorio:
-2. Navega al directorio del proyecto Ej: cd X-Twitter
-3. Ejecuta la aplicación Ej: cd cmd
+2. Navega al directorio del proyecto Ej: cd X-Twitter/cmd
+3. Ejecuta la aplicación
    go run main.go
    La aplicación estará disponible en http://localhost:8080.
    Mediante Postman podrás realizar las peticiones necesarias para probar la funcionalidad.
 
 1. **Pruebas en Postman:**
-   - Para facilitar las pruebas, he creado una colección de Postman que puedes descargar [aquí](https://universal-spaceship-200633.postman.co/workspace/New-Team-Workspace~8c8f3f5b-5dbf-423d-8ed2-d8eb314bf076/folder/15549609-d9eaf677-91d6-4b5c-a100-aa7faf896647?ctx=documentation).
+   - Para facilitar las pruebas, se ha creado una colección de Postman que puedes descargar [aquí](https://universal-spaceship-200633.postman.co/workspace/New-Team-Workspace~8c8f3f5b-5dbf-423d-8ed2-d8eb314bf076/folder/15549609-d9eaf677-91d6-4b5c-a100-aa7faf896647?ctx=documentation).
 
    - Importa la colección en tu aplicación Postman y encontrarás ejemplos de solicitudes para probar las diferentes funcionalidades de X-Twitter.
 
-2. **Ejecución Local:**
-   - Si prefieres ejecutar la aplicación localmente, sigue estos pasos:
-
-     # Clona el repositorio
-
-     # Navega al directorio del proyecto
-     cd X-Twitter
-
-     # Ejecuta la aplicación
-     go run main.go
-
-   - La aplicación estará disponible en `http://localhost:8080`.
    - Endpoints
    - Creación de usuarios:
    - http://localhost:8080/create_user
