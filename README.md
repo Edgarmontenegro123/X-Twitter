@@ -153,7 +153,16 @@ Asegúrate de tener instalado Go en tu sistema. Puedes descargarlo [aquí](https
    - Obtener tweets:  
      http://localhost:8080/get_tweets/3  
    - Obtener seguidores:  
-     http://localhost:8080/get_followers/3  
+     http://localhost:8080/get_followers/3
+
+     ### Nota:
+   - Esta aplicación realizada completamente en GO, también ha sido Hosteada en [FL0](https://docs.fl0.com/), siendo la URL base ---> https://x-twitter-montenegro.2.us-1.fl0.io
+  
+     <img src = '/utils/createUser.png' height = '300px'>
+     <img src = '/utils/followUser.png' height = '300px'>
+     <img src = '/utils/publishTweet.png' height = '300px'>
+     <img src = '/utils/getTweets.png' height = '300px'>
+     <img src = '/utils/getFollowers.png' height = '300px'>
 
 ## Escalabilidad
 X-Twitter ha sido diseñada con la escalabilidad en mente para manejar un crecimiento significativo de usuarios y tweets. Algunas estrategias para la escalabilidad podrían ser:
