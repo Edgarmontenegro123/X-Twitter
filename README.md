@@ -6,7 +6,7 @@
 - [Descripción General](#descripcion-general)
 - [Arquitectura](#arquitectura)
 - [Componentes](#componentes)
-- [Tecnologías](#tecnologias)
+- [Herramientas Empleadas](#herramientas-empleadas)
 - [Instrucciones de Uso](#instrucciones-de-uso)
 - [Escalabilidad](#escalabilidad)
 - [Business Assumptions](#business-assumptions)
@@ -88,7 +88,7 @@ La arquitectura de X-Twitter está compuesta por varios componentes que trabajan
 
 Estos componentes trabajan juntos para proporcionar una plataforma funcional de microblogging. En futuras iteraciones, estos componentes podrían escalarse o reemplazarse con implementaciones más robustas según sea necesario.
 
-## Tecnologías
+## Herramientas Empleadas
 X-Twitter está construido utilizando varias tecnologías que se han seleccionado para proporcionar una base sólida y eficiente para la plataforma. A continuación, se detallan las tecnologías clave utilizadas:
 
 ### 1. Lenguaje de Programación: Go
@@ -136,8 +136,6 @@ Asegúrate de tener instalado Go en tu sistema. Puedes descargarlo [aquí](https
    go run main.go
    La aplicación estará disponible en http://localhost:8080.
    Mediante Postman podrás realizar las peticiones necesarias para probar la funcionalidad.
-
-## Instrucciones de Uso
 
 1. **Pruebas en Postman:**
    - Para facilitar las pruebas, he creado una colección de Postman que puedes descargar [aquí](https://universal-spaceship-200633.postman.co/workspace/New-Team-Workspace~8c8f3f5b-5dbf-423d-8ed2-d8eb314bf076/folder/15549609-d9eaf677-91d6-4b5c-a100-aa7faf896647?ctx=documentation).
