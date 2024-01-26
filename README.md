@@ -156,7 +156,7 @@ Asegúrate de tener instalado Go en tu sistema. Puedes descargarlo [aquí](https
      http://localhost:8080/get_followers/3
 
      ### Nota:
-   - Esta aplicación realizada completamente en GO, también ha sido Hosteada en [FL0](https://docs.fl0.com/),
+   - Esta aplicación realizada completamente en GO, también ha sido Hosteada en [FL0](https://docs.fl0.com/),  
      siendo la URL base ---> https://x-twitter-montenegro.2.us-1.fl0.io
   
      <img src = '/utils/createUser.png' height = '300px' width = '450px'>
