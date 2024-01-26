@@ -88,7 +88,7 @@ La arquitectura de X-Twitter está compuesta por varios componentes que trabajan
 
 Estos componentes trabajan juntos para proporcionar una plataforma funcional de microblogging. En futuras iteraciones, estos componentes podrían escalarse o reemplazarse con implementaciones más robustas según sea necesario.
 
-## Tecnologías Utilizadas
+## Tecnologías
 X-Twitter está construido utilizando varias tecnologías que se han seleccionado para proporcionar una base sólida y eficiente para la plataforma. A continuación, se detallan las tecnologías clave utilizadas:
 
 ### 1. Lenguaje de Programación: Go
