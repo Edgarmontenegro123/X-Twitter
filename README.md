@@ -92,15 +92,15 @@ Estos componentes trabajan juntos para proporcionar una plataforma funcional de 
 X-Twitter está construido utilizando varias tecnologías que se han seleccionado para proporcionar una base sólida y eficiente para la plataforma. A continuación, se detallan las tecnologías clave utilizadas:
 
 ### 1. Lenguaje de Programación: Go
-- **Descripción:** Go (o Golang) se eligió como el lenguaje principal de desarrollo debido a su rendimiento, simplicidad y concurrencia integrada. La eficiencia en el uso de recursos y la facilidad de desarrollo en entornos concurrentes hacen que
-- Go sea una elección sólida para construir servicios backend.
+- **Descripción:** Go (o Golang) se eligió como el lenguaje principal de desarrollo debido a su rendimiento, simplicidad y concurrencia integrada. La eficiencia en el uso de recursos y la facilidad de desarrollo en entornos concurrentes hacen que  
+Go sea una elección sólida para construir servicios backend.
 
 ### 2. Framework Web: Gin
 - **Descripción:** Gin es un framework web para Go que se utiliza para gestionar las rutas HTTP y proporcionar un manejo eficiente de solicitudes y respuestas. Su enfoque minimalista y su rendimiento lo hacen adecuado para aplicaciones web simples y rápidas.
 
 ### 3. Base de Datos: In-Memory
-- **Descripción:** Se ha implementado una base de datos en memoria para simplificar el desarrollo inicial. Aunque es una solución básica y no apta para entornos de producción a gran escala, cumple con los requisitos del challenge y proporciona
-- un almacenamiento temporal para usuarios y tweets.
+- **Descripción:** Se ha implementado una base de datos en memoria para simplificar el desarrollo inicial. Aunque es una solución básica y no apta para entornos de producción a gran escala, cumple con los requisitos del challenge y proporciona  
+un almacenamiento temporal para usuarios y tweets.
 
 Estas tecnologías fueron seleccionadas para facilitar el desarrollo, mantener la eficiencia y cumplir con los requisitos específicos del challenge. En iteraciones futuras, podría considerarse la adopción de tecnologías más robustas según sea necesario.
 
@@ -111,12 +111,12 @@ La arquitectura de X-Twitter se organiza en varios componentes que trabajan junt
 - **Descripción:** Los controladores manejan las solicitudes HTTP, interpretan los parámetros de la solicitud y llaman a los servicios correspondientes para ejecutar la lógica de negocio. En X-Twitter, hay controladores para gestionar usuarios y tweets.
 
 ### 2. Services
-- **Descripción:** Los servicios contienen la lógica de negocio de la aplicación. En X-Twitter, existen servicios separados para usuarios y tweets. Estos servicios interactúan con la base de datos y aplican reglas de negocio, como la validación de tweets
-- y la gestión de seguidores.
+- **Descripción:** Los servicios contienen la lógica de negocio de la aplicación. En X-Twitter, existen servicios separados para usuarios y tweets. Estos servicios interactúan con la base de datos y aplican reglas de negocio, como la validación de tweets  
+y la gestión de seguidores.
 
 ### 3. Base de Datos en Memoria
-- **Descripción:** Para simplificar el desarrollo inicial, se ha implementado una base de datos en memoria. Almacena información sobre usuarios y tweets. A tener en cuenta, esta implementación es básica y no está diseñada para entornos de producción a
-- gran escala.
+- **Descripción:** Para simplificar el desarrollo inicial, se ha implementado una base de datos en memoria. Almacena información sobre usuarios y tweets. A tener en cuenta, esta implementación es básica y no está diseñada para entornos de producción a  
+gran escala.
 
 ### 4. Gin (Framework Web)
 - **Descripción:** Gin se utiliza como el framework web principal para manejar las rutas HTTP. Interactúa con los controladores y facilita la gestión de solicitudes y respuestas HTTP.
@@ -141,10 +141,10 @@ Asegúrate de tener instalado Go en tu sistema. Puedes descargarlo [aquí](https
    - Importa la colección en tu aplicación Postman y encontrarás ejemplos de solicitudes para probar las diferentes funcionalidades de X-Twitter.
 
    ### Endpoints
-   - Creación de usuarios:  
+   - Creación de usuario:  
      http://localhost:8080/create_user  
      body: {"user_id": 3, "username": "user3"}  
-   - Publicar tweeter:  
+   - Publicar tweet:  
      http://localhost:8080/publish_tweet  
      body: {"user_id": 3, "content": "Este es un tweet del user3"}  
    - Seguir a un usuario:  
@@ -177,8 +177,8 @@ X-Twitter ha sido diseñada con la escalabilidad en mente para manejar un crecim
 Estas estrategias aseguran que X-Twitter pueda manejar un alto número de usuarios concurrentes y mantener un rendimiento óptimo de ser necesario.
 
 ## Business Assumptions
-- **Optimización para Operaciones de Lectura:** La solución actual, aunque funcional, no se considera optimizada para un entorno de producción con un gran número de usuarios y tweets. Se asume que, para alcanzar un rendimiento óptimo en operaciones
-- de lectura, se requerirán mejoras significativas, como:
+- **Optimización para Operaciones de Lectura:** La solución actual, aunque funcional, no se considera optimizada para un entorno de producción con un gran número de usuarios y tweets. Se asume que, para alcanzar un rendimiento óptimo en operaciones  
+de lectura, se requerirán mejoras significativas, como:
   - **Uso de Caching:** Implementación de un sistema de caché para reducir la latencia en la recuperación de tweets frecuentemente consultados.
   - **Índices Eficientes en la Base de Datos:** Creación de índices eficientes para acelerar las consultas de búsqueda, especialmente en operaciones relacionadas con el timeline y seguidores.
   - **Escalabilidad Horizontal:** Consideración de estrategias de escalabilidad horizontal para distribuir la carga de lectura entre múltiples nodos o servidores.
