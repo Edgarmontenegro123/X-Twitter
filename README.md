@@ -6,7 +6,7 @@
 - [Descripción General](#descripcion-general)
 - [Arquitectura](#arquitectura)
 - [Componentes](#componentes)
-- [Tecnologías Utilizadas](#tecnologias-utilizadas)
+- [Tecnologías](#tecnologias)
 - [Instrucciones de Uso](#instrucciones-de-uso)
 - [Escalabilidad](#escalabilidad)
 - [Business Assumptions](#business-assumptions)
