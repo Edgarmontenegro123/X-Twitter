@@ -136,27 +136,24 @@ Asegúrate de tener instalado Go en tu sistema. Puedes descargarlo [aquí](https
    go run main.go
    La aplicación estará disponible en http://localhost:8080.
    Mediante Postman podrás realizar las peticiones necesarias para probar la funcionalidad.
-
-1. **Pruebas en Postman:**
+4. Pruebas en Postman:
    - Para facilitar las pruebas, se ha creado una colección de Postman que puedes descargar [aquí](https://universal-spaceship-200633.postman.co/workspace/New-Team-Workspace~8c8f3f5b-5dbf-423d-8ed2-d8eb314bf076/folder/15549609-d9eaf677-91d6-4b5c-a100-aa7faf896647?ctx=documentation).
-
    - Importa la colección en tu aplicación Postman y encontrarás ejemplos de solicitudes para probar las diferentes funcionalidades de X-Twitter.
 
-   - Endpoints
+   ### Endpoints
    - Creación de usuarios:
-   - http://localhost:8080/create_user
-   - body: {"user_id": 3, "username": "user3"}
+     http://localhost:8080/create_user
+     body: {"user_id": 3, "username": "user3"}
    - Publicar tweeter:
-   - http://localhost:8080/publish_tweet
-   - body: {"user_id": 3, "content": "Este es un tweet del user3"}
+     http://localhost:8080/publish_tweet
+     body: {"user_id": 3, "content": "Este es un tweet del user3"}
    - Seguir a un usuario:
-   - http://localhost:8080/follow_user
-   - body: {"user_id": 3, "follower_id": 1}
+     http://localhost:8080/follow_user
+     body: {"user_id": 3, "follower_id": 1}
    - Obtener tweets:
-   - http://localhost:8080/get_tweets/3
+     http://localhost:8080/get_tweets/3
    - Obtener seguidores:
-   - http://localhost:8080/get_followers/3
-
+     http://localhost:8080/get_followers/3
 
 ## Escalabilidad
 X-Twitter ha sido diseñada con la escalabilidad en mente para manejar un crecimiento significativo de usuarios y tweets. Algunas estrategias para la escalabilidad podrían ser:
